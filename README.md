@@ -47,7 +47,7 @@ make sure to use `--quick` and `--all` after setting the `-w` `-r` `-d` cause th
 Example
 
 ```
-sef -d target.com -w wordlist.txt -r resolver.txt --ac config.ini --quick -o ./target
+sef -d target.com -w wordlist.txt -r resolver.txt --ac config.ini --all -o ./target
 ```
 
 ```
