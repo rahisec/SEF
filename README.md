@@ -44,11 +44,24 @@ Make sure that, you are running install.sh as root
 
 make sure to use `--quick` and `--all` after setting the `-w` `-r` `-d` cause this param sets value and `-o` at the end to save everything in a specific directory. Also about `--dL` in which tool are they going to imported
 
-Example
+### Example
 
 ```
-sef -d target.com -w wordlist.txt -r resolver.txt --ac config.ini --all -o ./target
+sef -d target.com -w wordlist.txt -r resolver.txt --ac config.ini --all -o target
 ```
+### Quick Mode 
+
+```
+sef -d target.com --ac config.ini --quick -o target
+```
+
+### All Enum Mode
+
+```
+sef -d target.com -w wordlist.txt -r resolver.txt --ac config.ini --all -o target 
+```
+
+### Flags
 
 ```
 Usage: 						
