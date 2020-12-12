@@ -74,3 +74,7 @@ Usage:
        sef --quick  To quickly perform passive scan of domain.
        sef --all    To fully scan using all functionality.
 ```
+
+# Note
+
+`--dL` flag is not ready yet. So just use `-d` 
