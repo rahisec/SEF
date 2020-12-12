@@ -40,7 +40,7 @@ Your local machine may face problems as it will perform hard DNS active enumerat
 Run install.sh and it will install all the requirnments \
 Make sure that, you are running install.sh as root
 
-## Usage
+# Usage
 
 make sure to use `--quick` and `--all` after setting the `-w` `-r` `-d` cause this param sets value and `-o` at the end to save everything in a specific directory. Also about `--dL` in which tool are they going to imported
 
