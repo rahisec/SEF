@@ -53,7 +53,7 @@ function Passive() {
     subfinder -d $domain -o subfinder.txt &>/dev/null
     assetfinder --subs-only $domain | sort -u > assetfinder.txt
     amass enum -passive -norecursive -noalts -d $domain -config $amass_config -o amass.txt &>/dev/null
-    findomain -t $domain -u findomain.txt &>/dev/null
+    findomain --quiet -t $domain -u findomain.txt &>/dev/null
     cat subfinder.txt assetfinder.txt amass.txt findomain.txt | grep -F ".$domain" | sort -u > passive.txt
     rm subfinder.txt assetfinder.txt amass.txt findomain.txt
 }
