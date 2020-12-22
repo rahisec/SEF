@@ -47,6 +47,7 @@ git clone https://github.com/blechschmidt/massdns.git ~/massdns
 cd ~/massdns
 make &>/dev/null
 mv ~/massdns/bin/massdns /usr/local/bin/
+cd -
 echo -e " ";
 
 #Install Findomain.
