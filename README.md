@@ -22,7 +22,7 @@ The aim is to give you as much subdomain as possible
 
 # Warning
 
-If you are using `--all` flag then make sure you are using this script from VPS \
+If you are using `--all` `--dLa` flag then make sure you are using this script from VPS \
 Your local machine may face problems as it will perform hard DNS active enumeration
 
 # Requirnment 
