@@ -47,34 +47,46 @@ make sure to use `--quick` and `--all` after setting the `-w` `-r` `-d` cause th
 ### Example
 
 ```
-sef -d -w -r --ac --all -o
+bash sef -d -w -r --ac --all -o
 ```
 ### Quick Mode 
 
 ```
-sef -d target.com --ac config.ini --quick -o target
+bash sef -d target.com --ac config.ini --quick -o target
 ```
 
 ### All Enum Mode
 
 ```
-sef -d target.com -w wordlist.txt -r resolver.txt --ac config.ini --all -o target 
+bash sef -d target.com -w wordlist.txt -r resolver.txt --ac config.ini --all -o target 
+```
+### Single Domain Scanning
+
+```
+bash sef -d target.com -w wordlist.txt -r resolvers.txt --ac amass_config.ini --all -o target.com
 ```
 
+### Domain-List Scanning 
+
+```
+bash sef -w wordlist.txt -r resolvers.txt --ac amass_config.ini --dLa domain_list.txt
+```
 ### Flags
 
 ```
-Usage: 						
+Usage: 
        sef -d       To Specify Domain.
        sef -w       To Specify wordlist to use else (Default).
        sef -r       To Specify resolver to use else (Default).
        sef -o       To Store all the result in specific folder.
-       sef --dL     To Import Domain-list.
+       sef --dLq    To quick passive scan Domain-list.
+       sef --dLa    To full scan Domain-list.
        sef --ac     To Specify Amass-config file.
-       sef --quick  To quickly perform passive scan of domain.
+       sef --quick  To quicky perform passive scan of domain.
        sef --all    To fully scan using all functionality.
 ```
 
 # Note
 
-`--dL` flag is not ready yet. So just use `-d` 
+If you are using `--dLq` `--dLa` then no need to use `--quick` `--all` `-o` \
+Make sure you are using `-w` `-r` `--ac` before `--dLa` `--dLq`
