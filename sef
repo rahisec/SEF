@@ -19,7 +19,7 @@ banner
 
 ## Variables
 list_resolver=resolvers.txt
-list_wordlist=2m-subdomains.txt
+list_wordlist=subdomains.txt
 amass_config=~/.config/amass/config.ini
 
 ## Function
@@ -122,8 +122,34 @@ while getopts ":hd:w:r:o:-:" optchar;do
         case "${optchar}" in
                 -)
                         case "${OPTARG}" in
-                                dL)
+                                dLq)
                                         domain_list="${!OPTIND}"; OPTIND=$(( $OPTIND + 1))
+				       for site in $(cat $domain_list);do
+						domain=$site
+						dir=$site
+						echo -e "\n Scanning $domain Right Now"
+						Passive
+						SubFinal
+						Htpx
+						sefresult
+						Output
+						echo -e "\n Scanning $domain done";done
+                                        ;;
+                                dLa)
+                                        domain_list="${!OPTIND}"; OPTIND=$(( $OPTIND + 1))
+				       for site in $(cat $domain_list);do
+						domain=$site
+						dir=$site
+						echo -e "\n Scanning $domain Right Now"
+						Passive
+						Active
+						ActPsv
+						Permute
+						SubFinal
+						Htpx
+						sefresult
+						Output
+						echo -e "\n Scanning $domain done";done
                                         ;;
 				ac)
                                         amass_config="${!OPTIND}"; OPTIND=$(( $OPTIND + 1))
@@ -155,10 +181,19 @@ while getopts ":hd:w:r:o:-:" optchar;do
 			echo "       $0 -w       To Specify wordlist to use else (Default)."
 			echo "       $0 -r       To Specify resolver to use else (Default)."
 			echo "       $0 -o       To Store all the result in specific folder."
-			echo "       $0 --dL     To Import Domain-list."
+			echo "       $0 --dLq     To quick passive scan Domain-list."
+			echo "       $0 --dLa     To full scan Domain-list."
                         echo "       $0 --ac     To Specify Amass-config file."
                         echo "       $0 --quick  To quicky perform passive scan of domain."
                         echo "       $0 --all    To fully scan using all functionality."
+			echo "	"
+			echo "Example Usage:					"
+			echo "	"
+			echo "	Single Domain Scanning"
+			echo "  \$ bash sef -d target.com -w wordlist.txt -r resolvers.txt --ac amass_config.ini --all -o target.com"
+			echo "	"
+			echo "  Domain-List Scanning"
+			echo "  \$ bash sef -w wordlist.txt -r resolvers.txt --ac amass_config.ini --dLa domain_list.txt"
                         exit 2
                         ;;
 
