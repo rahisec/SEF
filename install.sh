@@ -84,7 +84,7 @@ echo -e " ";
 
 #Wordlist
 echo -e "Downloading Wordlist";
-curl -O https://s3.amazonaws.com/assetnote-wordlists/data/manual/2m-subdomains.txt
+curl -O https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/subdomains/subdomains.txt
 echo -e "Downloading Resolvers"
 curl -O https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
 
