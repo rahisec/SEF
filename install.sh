@@ -26,7 +26,7 @@ echo -e " ";
 
 #Install Subfinder.
 echo -e "Installing Subfinder";
-GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 echo -e " ";
 
 #Install Amass.
@@ -79,7 +79,7 @@ echo -e " ";
 
 #Install Httpx
 echo -e "Installing Httpx";
-GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
+GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
 echo -e " ";
 
 #Wordlist
