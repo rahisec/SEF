@@ -98,6 +98,13 @@ Dmut() {
             go install -v github.com/bp0lr/dmut@latest &>/dev/null
 }
 
+Httpx() {
+            printf "                  \r"
+            go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest &>/dev/null
+            printf " Httpx Installed! \n"
+}
+
+
 #Downloading Worlists
 Wordlist() {
           printf "                  \r"
@@ -131,6 +138,7 @@ hash cero 2>/dev/null && printf "[!] Cero is already installed.\n" || { printf "
 hash puredns 2>/dev/null && printf "[!] PureDns is already installed.\n" || { printf "[+] Installing PureDns!" && PureDns; }
 hash anew 2>/dev/null && printf "[!] Anew is already installed.\n" || { printf "[+] Installing Anew!" && Anew; }
 hash dmut 2>/dev/null && printf "[!] Dmut is already installed.\n" || { printf "[+] Installing Dmut!" && Dmut; }
+hash httpx 2>/dev/null && printf "[!] Httpx is already installed.\n" || { printf "[+] Installing Httpx!" && Httpx; }
 find subdomains.txt &>/dev/null && printf "[!] Wordlist is already Installed.\n" || { printf "[+] Installing Wordlist!" && Wordlist; }
 find resolvers.txt &>/dev/null && printf "[!] Resolver is already Installed.\n" || { printf "[+] Installing Resolver!" && Resolver; }
 
@@ -147,6 +155,7 @@ list=(
   PureDns
   Anew
   Dmut
+  Httpx
   Wordlist
   Resolver
 )
